@@ -1,0 +1,345 @@
+.container
+  .row
+    #atk-main-panel.col-xs-11.col-xs-offset-1
+
+      ul#atk-modes-tabs.nav.nav-tabs(role='tablist')
+        li.active(role='presentation')
+          a#atk-tm-tab(href='#atk-tm-panel', role='tab', data-toggle='tab', aria-controls='atk-tm-panel', aria-expanded='true')
+            | top menu
+            span.fa.fa-circle
+        li(role='presentation')
+          a#atk-adjustment-tab(href='#atk-adjustment-panel', role='tab', data-toggle='tab', aria-controls='atk-adjustment-panel', aria-expanded='true')
+            | adjustment
+            span.fa.fa-circle
+        li(role='presentation')
+          a#atk-animation-tab(href='#atk-animation-panel', role='tab', data-toggle='tab', aria-controls='atk-animation-panel', aria-expanded='true')
+            | animation
+            span.fa.fa-circle
+
+      #atk-blocks-panel.tab-content
+        #atk-blocks-panel-handle
+          #atk-blocks-panel-settings-top
+            #atk-blocks-panel-toggle-handle
+              span.fa.fa-chevron-left
+            #atk-blocks-panel-move-handle
+              span.fa.fa-arrows
+          #atk-blocks-panel-settings-bottom
+            #atk-blocks-panel-reference-handle
+              span.fa.fa-gear
+
+        #atk-tm-panel.tab-pane.fade.in.active(role='tabpanel', aria-labelledby='atk-tm-tab')
+          .atk-blocks-holder
+            #atk-tm-tabs(data-toggle="tooltip" data-placement="right" title="basic containers")
+              span.fa.fa-list-alt
+              i.fa.fa-circle
+              #atk-tm-name.atk-block
+                span.fa.fa-flag
+              #atk-tm-logo.atk-block
+                span.fa.fa-image
+              #atk-tm-plain.atk-block
+                span.fa.fa-columns
+              #atk-tm-pages.atk-block
+                span.fa.fa-align-left
+              #atk-tm-posts.atk-block
+                span.fa.fa-align-left
+              #atk-tm-searchbox.atk-block
+                span.fa.fa-align-left
+            #atk-tm-containers(data-toggle="tooltip" data-placement="right" title="basic containers")
+              span.fa.fa-list-alt
+              i.fa.fa-circle
+              #atk-tm-dropdown.atk-block
+                span.fa.fa-compress
+              #atk-tm-megapanel.atk-block
+                span.fa.fa-columns
+            #atk-layout-columns(data-toggle="tooltip" data-placement="right" title="columns")
+              span.fa.fa-columns
+              i.fa.fa-circle
+              #atk-layout-column1.atk-block
+                h5 1
+                h6 col
+              #atk-layout-column2.atk-block
+                h5 2
+                h6 col
+              #atk-layout-column3.atk-block
+                h5 3
+                h6 col
+              #atk-layout-column4.atk-block
+                h5 4
+                h6 col
+              #atk-layout-column5.atk-block
+                h5 5
+                h6 col
+              #atk-layout-column6.atk-block
+                h5 6
+                h6 col
+              #atk-layout-column7.atk-block
+                h5 7
+                h6 col
+              #atk-layout-column8.atk-block
+                h5 8
+                h6 col
+              #atk-layout-column9.atk-block
+                h5 9
+                h6 col
+              #atk-layout-column10.atk-block
+                h5 10
+                h6 col
+              #atk-layout-column11.atk-block
+                h5 11
+                h6 col
+              #atk-layout-column12.atk-block
+                h5 12
+                h6 col
+            #atk-layout-offsets(data-toggle="tooltip" data-placement="right" title="psydo offsets")
+              span.fa.fa-outdent
+              i.fa.fa-circle
+              #atk-layout-offset-column1.atk-block
+                h5 1
+                h6 col
+              #atk-layout-offset-column2.atk-block
+                h5 2
+                h6 col
+              #atk-layout-offset-column3.atk-block
+                h5 3
+                h6 col
+              #atk-layout-offset-column4.atk-block
+                h5 4
+                h6 col
+              #atk-layout-offset-column5.atk-block
+                h5 5
+                h6 col
+              #atk-layout-offset-column6.atk-block
+                h5 6
+                h6 col
+              #atk-layout-offset-column7.atk-block
+                h5 7
+                h6 col
+              #atk-layout-offset-column8.atk-block
+                h5 8
+                h6 col
+              #atk-layout-offset-column9.atk-block
+                h5 9
+                h6 col
+              #atk-layout-offset-column10.atk-block
+                h5 10
+                h6 col
+              #atk-layout-offset-column11.atk-block
+                h5 11
+                h6 col
+            #atk-tm-singlepage(data-toggle="tooltip" data-placement="right" title="singlepage components")
+              span.fa.fa-building-o
+              i.fa.fa-circle
+            #atk-tm-others(data-toggle="tooltip" data-placement="right" title="others")
+              span.fa.fa-th-large
+              i.fa.fa-circle
+        #atk-adjustment-panel.tab-pane.fade(role='tabpanel', aria-labelledby='atk-adjustment-tab')
+          .atk-blocks-holder
+        #atk-animation-panel.tab-pane.fade(role='tabpanel', aria-labelledby='atk-animation-tab')
+          .atk-blocks-holder
+
+      #atk-display-panel.atk-container
+        .container
+          .row
+            nav#atk-top-menu.navbar.navbar-default(role='navigation')
+              .container-fluid
+                #atk-tm-header.navbar-header
+                  a#atk-tm-brand.navbar-brand(href='#')
+                    span BRAND
+                  a#atk-tm-togglebutton.navbar-toggle.collapsed(type='button' data-toggle='collapse' data-target='#atk-navbar-content')
+                    span#atk-tm-toggletext.sr-only TOGGLE NAVIGATION
+                    span#atk-tm-toggleicon.fa.fa-chevron-down
+                #atk-tm-content.collapse.navbar-collapse
+                  ul.nav.navbar-nav.atk-tm-nav
+                    li.atk-tm-dropdown
+                      a.atk-tm-dropdown-link(data-toggle='dropdown' aria-expanded='false')
+                        | ABOUT
+                      ul.dropdown-menu.atk-tm-dropdown-menu(role='menu')
+                        li.dropdown-header
+                          | HEADER
+                        li
+                          a(href='#') ITEM
+                        li.divider
+                    li.atk-tm-dropdown
+                      a.atk-tm-dropdown-link(data-toggle='dropdown' aria-expanded='false')
+                        | NEWS
+                      ul.dropdown-menu.atk-tm-dropdown-menu(role='menu')
+                        li.dropdown-header
+                          | HEADER
+                        li
+                          a(href='#') ITEM
+                        li.divider
+                    li.atk-tm-dropdown
+                      a.atk-tm-dropdown-link(data-toggle='dropdown' aria-expanded='false')
+                        | CONTACT
+                      ul.dropdown-menu.atk-tm-dropdown-menu(role='menu')
+                        li.dropdown-header
+                          | HEADER
+                        li
+                          a(href='#') ITEM
+                        li.divider
+                #atk-tm-mega-content
+                  //- .row.atk-tm-mega-panel(role='megapanel')
+                  //-   .col-xs-1.col-md-2.col-lg-2.atk-tm-mega-col
+                  //-     ul.atk-tm-mega-incol-menu
+                  //-       li.atk-tm-mega-incol-menu-header ONE
+                  //-       li.atk-tm-mega-incol-menu-item
+                  //-         a SOMETHING
+                  //-       li.atk-tm-mega-incol-menu-divider
+                  //-       li.atk-tm-mega-incol-menu-disabled
+                  //-         a THREE
+
+
+
+
+.container.fixed
+  .row
+    #atk-details-panel.col-xs-11.col-xs-offset-1
+      ul#atk-types-tabs.nav.nav-tabs(role='tablist')
+        li
+          #atk-details-panel-toggle-handle
+            span.fa.fa-chevron-down
+          #atk-details-panel-move-handle
+            span.fa.fa-arrows
+          #atk-details-panel-reference-handle
+            span.fa.fa-gear
+        li.active(role='presentation')
+          a#atk-background-tab(href='#atk-background-panel', role='tab', data-toggle='tab', aria-controls='atk-background-panel', aria-expanded='true') 
+            | background
+        li(role='presentation')
+          a#atk-border-tab(href='#atk-border-panel', role='tab', data-toggle='tab', aria-controls='atk-border-panel', aria-expanded='true') 
+            | border
+        li(role='presentation')
+          a#atk-text-tab(href='#atk-text-panel', role='tab', data-toggle='tab', aria-controls='atk-text-panel', aria-expanded='true') 
+            | text
+        li(role='presentation')
+          a#atk-space-tab(href='#atk-space-panel', role='tab', data-toggle='tab', aria-controls='atk-space-panel', aria-expanded='true') 
+            | space
+        li(role='presentation')
+          a#atk-position-tab(href='#atk-position-panel', role='tab', data-toggle='tab', aria-controls='atk-position-panel', aria-expanded='true') 
+            | position
+        li(role='presentation')
+          a#atk-size-tab(href='#atk-size-panel', role='tab', data-toggle='tab', aria-controls='atk-size-panel', aria-expanded='true') 
+            | size
+        li(role='presentation')
+          a#atk-display-tab(href='#atk-display-panel', role='tab', data-toggle='tab', aria-controls='atk-display-panel', aria-expanded='true') 
+            | display
+        li(role='presentation')
+          a#atk-animation-tab(href='#atk-animation-panel', role='tab', data-toggle='tab', aria-controls='atk-animation-panel', aria-expanded='true') 
+            | animation
+
+      #atk-settings-panel.tab-content
+        #atk-background-panel.tab-pane.fade.in.active(role='tabpanel', aria-labelledby='atk-background-tab')
+          .atk-settings
+            input#backgroundColor.atk-input(type='text' value='background-color' placeholder='background-color')
+
+            input#backgroundImage.atk-input(type='text' value='background-image' placeholder='background-image')
+            input#backgroundOrigin.atk-input(type='text' value='background-origin' placeholder='background-origin')
+            input#backgroundPosition.atk-input(type='text' value='background-position' placeholder='background-position')
+            input#backgroundRepeat.atk-input(type='text' value='background-repeat' placeholder='background-repeat')
+            input#backgroundSize.atk-input(type='text' value='background-size' placeholder='background-size')
+
+            input#backgroundAttachment.atk-input(type='text' value='background-attachment' placeholder='background-attachment')
+            input#backgroundClip.atk-input(type='text' value='background-clip' placeholder='background-clip')
+        #atk-border-panel.tab-pane.fade(role='tabpanel', aria-labelledby='atk-border-tab')
+          .atk-settings
+            //- input#border.atk-input(type='text' value='border' placeholder='border')
+            //- input#borderTop.atk-input(type='text' value='border-top' placeholder='border-top')
+            //- input#borderRight.atk-input(type='text' value='border-right' placeholder='border-right')
+            //- input#borderBottom.atk-input(type='text' value='border-bottom' placeholder='border-bottom')
+            //- input#borderLeft.atk-input(type='text' value='border-left' placeholder='border-left')
+            input#borderWidth.atk-input(type='text' value='border-width' placeholder='border-width')
+            //- input#borderTopWidth.atk-input(type='text' value='border-top-width' placeholder='border-top-width')
+            //- input#borderRightWidth.atk-input(type='text' value='border-right-width' placeholder='border-right-width')
+            //- input#borderBottomWidth.atk-input(type='text' value='border-bottom-width' placeholder='border-bottom-width')
+            //- input#borderLeftWidth.atk-input(type='text' value='border-left-width' placeholder='border-left-width')
+            input#borderColor.atk-input(type='text' value='border-color' placeholder='border-color')
+            //- input#borderTopColor.atk-input(type='text' value='border-top-color' placeholder='border-top-color')
+            //- input#borderRightColor.atk-input(type='text' value='border-right-color' placeholder='border-right-color')
+            //- input#borderBottomColor.atk-input(type='text' value='border-bottom-color' placeholder='border-bottom-color')
+            //- input#borderLeftColor.atk-input(type='text' value='border-left-color' placeholder='border-left-color')
+            input#borderStyle.atk-input(type='text' value='border-style' placeholder='border-style')
+            //- input#borderTopStyle.atk-input(type='text' value='border-top-style' placeholder='border-top-style')
+            //- input#borderRightStyle.atk-input(type='text' value='border-right-style' placeholder='border-right-style')
+            //- input#borderBottomStyle.atk-input(type='text' value='border-bottom-style' placeholder='border-bottom-style')
+            //- input#borderLeftStyle.atk-input(type='text' value='border-left-style' placeholder='border-left-style')
+            input#borderRadius.atk-input(type='text' value='border-radius' placeholder='border-radius')
+            //- input#borderTopLeftRadius.atk-input(type='text' value='border-top-left-radius' placeholder='border-top-left-radius')
+            //- input#borderTopRightRadius.atk-input(type='text' value='border-top-right-radius' placeholder='border-top-right-radius')
+            //- input#borderBottomLeftRadius.atk-input(type='text' value='border-bottom-left-radius' placeholder='border-bottom-left-radius')
+            //- input#borderBottomRightRadius.atk-input(type='text' value='border-bottom-right-radius' placeholder='border-bottom-right-radius')
+            input#borderSpacing.atk-input(type='text' value='border-spacing' placeholder='border-spacing')
+            //- input#borderCollapse.atk-input(type='text' value='border-collapse' placeholder='border-collapse')
+            input#boxShadow.atk-input(type='text' value='box-shadow' placeholder='box-shadow')
+            //- input#boxSizing.atk-input(type='text' value='box-sizing' placeholder='box-sizing')
+        #atk-text-panel.tab-pane.fade(role='tabpanel', aria-labelledby='atk-text-tab')
+          .atk-settings
+            //- input#font.atk-input(type='text' value='font' placeholder='font')
+            input#fontSize.atk-input(type='text' value='font-size' placeholder='font-size')
+            input#fontWeight.atk-input(type='text' value='font-weight' placeholder='font-weight')
+            input#fontFamily.atk-input(type='text' value='font-family' placeholder='font-family')
+            input#fontStyle.atk-input(type='text' value='font-style' placeholder='font-style')
+            input#textIndent.atk-input(type='text' value='text-indent' placeholder='text-indent')
+            input#textShadow.atk-input(type='text' value='text-shadow' placeholder='text-shadow')
+            input#textAlign.atk-input(type='text' value='text-align' placeholder='text-align')
+            input#textDecoration.atk-input(type='text' value='text-decoration' placeholder='text-decoration')
+            input#textOverflow.atk-input(type='text' value='text-overflow' placeholder='text-overflow')
+            input#textTransform.atk-input(type='text' value='text-transform' placeholder='text-transform')
+            input#lineHeight.atk-input(type='text' value='line-height' placeholder='line-height')
+            input#letterSpacing.atk-input(type='text' value='letter-spacing' placeholder='letter-spacing')
+            input#whiteSpace.atk-input(type='text' value='white-space' placeholder='white-space')
+            input#wordSpacing.atk-input(type='text' value='word-spacing' placeholder='word-spacing')
+            input#wordWrap.atk-input(type='text' value='word-wrap' placeholder='word-wrap')
+        #atk-space-panel.tab-pane.fade(role='tabpanel', aria-labelledby='atk-space-tab')
+          .atk-settings
+            input#margin.atk-input(type='text' value='margin' placeholder='margin')
+            //- input#marginTop.atk-input(type='text' value='margin-top' placeholder='margin-top')
+            //- input#marginRight.atk-input(type='text' value='margin-right' placeholder='margin-right')
+            //- input#marginBottom.atk-input(type='text' value='margin-bottom' placeholder='margin-bottom')
+            //- input#marginLeft.atk-input(type='text' value='margin-left' placeholder='margin-left')
+            input#padding.atk-input(type='text' value='padding' placeholder='padding')
+            //- input#paddingTop.atk-input(type='text' value='padding-top' placeholder='padding-top')
+            //- input#paddingRight.atk-input(type='text' value='padding-right' placeholder='padding-right')
+            //- input#paddingBottom.atk-input(type='text' value='padding-bottom' placeholder='padding-bottom')
+            //- input#paddingLeft.atk-input(type='text' value='padding-left' placeholder='padding-left')
+        #atk-position-panel.tab-pane.fade(role='tabpanel', aria-labelledby='atk-position-tab')
+          .atk-settings
+            //- input#position.atk-input(type='text' value='position' placeholder='position')
+            input#top.atk-input(type='text' value='top' placeholder='top')
+            input#right.atk-input(type='text' value='right' placeholder='right')
+            input#bottom.atk-input(type='text' value='bottom' placeholder='bottom')
+            input#left.atk-input(type='text' value='left' placeholder='left')
+            input#zIndex.atk-input(type='text' value='z-index' placeholder='z-index')
+        #atk-size-panel.tab-pane.fade(role='tabpanel', aria-labelledby='atk-size-tab')
+          .atk-settings
+            input#width.atk-input(type='text' value='width' placeholder='width')
+            input#height.atk-input(type='text' value='height' placeholder='height')
+            input#maxWidth.atk-input(type='text' value='max-width' placeholder='max-width')
+            input#maxHeight.atk-input(type='text' value='max-height' placeholder='max-height')
+            input#minWidth.atk-input(type='text' value='min-width' placeholder='min-width')
+            input#minHeight.atk-input(type='text' value='min-height' placeholder='min-height')
+        #atk-display-panel.tab-pane.fade(role='tabpanel', aria-labelledby='atk-display-tab')
+          .atk-settings
+            input#display.atk-input(type='text' value='display' placeholder='display')
+            input#visibility.atk-input(type='text' value='visibility' placeholder='visibility')
+            input#opacity.atk-input(type='text' value='opacity' placeholder='opacity')
+            //- input#content.atk-input(type='text' value='content' placeholder='content')
+            //- input#cursor.atk-input(type='text' value='cursor' placeholder='cursor')
+            //- input#float.atk-input(type='text' value='float' placeholder='float')
+            //- input#clear.atk-input(type='text' value='clear' placeholder='clear')
+        #atk-animation-panel.tab-pane.fade(role='tabpanel', aria-labelledby='atk-animation-tab')
+          .atk-settings
+
+//- #atk-reference-panel
+#atk-reference-panel.hidden-block
+  #atk-references
+    h5 administrator tool kits
+
+//- #hidden-blocks
+//-   .container.atk-container
+//-   .container-fluid.atk-container
+//-   .row.atk-container
+//-   .col-xs-3.atk-container
+//-     h6 3 columns
+//-   .col-xs-3.offset-block
+
+//-   .square

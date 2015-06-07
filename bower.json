@@ -1,0 +1,25 @@
+{
+  "name": "TEMPLATE",
+  "version": "0.0.0",
+  "authors": [
+    "theExperiences <theexperiences@gmail.com>"
+  ],
+  "main": "./public/index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "TEMPLATE"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.theexperiences.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

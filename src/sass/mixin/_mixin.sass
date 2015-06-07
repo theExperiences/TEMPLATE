@@ -1,0 +1,800 @@
+// LAYOUT:
+=full()
+  height: 100%
+  height: 100%
+=expand()
+  width: 100%
+=size( $w:100%, $h:100% )
+  width: $w
+  height: $h
+=iblock()
+  display: inline-block
+=inline()
+  display: inline
+=block()
+  display: block
+
+// COLOR:
+=bgc( $c:white )
+  background-color: $c
+
+//------------------ FUNCTIONS -----------------//
+// COLOR:
+
+// rotate color:
+@function roc($color, $degrees:10)
+  @return adjust-hue($color, $degrees)
+
+// rotate color anti-clock-wise:
+@function nroc($color, $degrees:10)
+  @return adjust-hue($color, -$degrees)
+
+// Makes a color brighter:
+@function brighter($color, $amount:10%)
+  @return saturate($color, $amount)
+
+// Makes a color dimmer:
+@function dimmer($color, $amount:10%)
+  @return desaturate($color, $amount)
+
+// Makes a color lighter:
+@function lighter($color, $amount:10%)
+  @return lighten($color, $amount)
+
+// Makes a color darker:
+@function darker($color, $amount:10%)
+  @return darken($color, $amount)
+
+// Makes a color more opaque:
+@function solid($color, $amount:.3)
+  @return opacify($color, $amount)
+  //or fade-in($color, $amount)
+
+// Makes a color more transparent:
+@function trans($color, $amount:.3)
+  @return transparentize($color, $amount)
+  //or fade-out($color, $amount)
+
+// SEGMENTS:
+// color segs: 255
+$c1: 1
+$c2: 24
+$c3: 47
+$c4: 70
+$c5: 93
+$c6: 116
+$c7: 139
+$c8: 162
+$c9: 185
+$c10: 208
+$c11: 231
+$c12: 254
+// opacity segs: 100%
+$o1: .01
+$o2: .02
+$o3: .03
+$o4: .04
+$o5: .05
+$o6: .07
+$o7: .1
+$o8: .2
+$o9: .3
+$o10: .4
+$o11: .5
+$o12: .7
+// angle segs: 360 deg
+$a1: 0
+$a2: 30
+$a3: 60
+$a4: 90
+$a5: 120
+$a6: 150
+$a7: 180
+$a8: 210
+$a9: 240
+$a10: 270
+$a11: 300
+$a12: 330
+
+// grid:
+$seg: 12
+$wid: 960px
+$gap: 20px
+$widu: $wid/$seg
+$pad: $gap/2
+
+
+//------------------ VIEW PORT SIZE -----------------//
+$phone: 768px
+$tablet: 992px
+$laptop: 1200px
+
+
+//------------------ FONT SIZE -----------------//
+$font-size-xxs: 8px
+$font-size-xs: 10px
+$font-size-s: 12px
+$font-size-base: 14px
+$font-size-l: 16px
+$font-size-xl: 18px
+$font-size-xxl: 20px
+$font-size-h: 24px
+$font-size-xh: 26px
+$font-size-xxh: 28px
+
+$f1: 8px //  font
+$f2: 10px //  phone font
+$f3: 12px //  tablet font
+$f4: 14px //  base font
+$f5: 16px //  large viewport font
+$f6: 18px //  extremely large font
+$f7: 20px //  h6
+$f8: 22px //  h5
+$f9: 24px //  h4
+$f10: 26px //  h3
+$f11: 28px //  h2
+$f12: 30px //  h1
+
+// Huge Fonts:
+$hf1: 40px
+$hf2: 42px
+$hf3: 44px
+$hf4: 46px
+$hf5: 48px
+$hf6: 50px
+$hf7: 52px
+$hf8: 54px
+$hf9: 56px
+$hf10: 58px
+$hf11: 60px
+$hf12: 62px
+
+=fz( $s )
+  font-size: $s
+
+h1
+  +fz($f10)
+  font-weight: 500
+h2
+  +fz($f9)
+  font-weight: 450
+h3
+  +fz($f8)
+  font-weight: 400
+h4
+  +fz($f7)
+  font-weight: 300
+h5
+  +fz($f6)
+  font-weight: 250
+h6
+  +fz($f5)
+  font-weight: 100
+
+*
+  @media screen and (max-width: $phone)
+    +fz($f3)
+    h1
+      +fz($f7)
+    h2
+      +fz($f6)
+    h3
+      +fz($f5)
+    h4
+      +fz($f4)
+    h5
+      +fz($f3)
+    h6
+      +fz($f2)
+
+  @media screen and (min-width: $phone) and (max-width: $tablet)
+    +fz($f3)
+    h1
+      +fz($f8)
+    h2
+      +fz($f7)
+    h3
+      +fz($f6)
+    h4
+      +fz($f5)
+    h5
+      +fz($f4)
+    h6
+      +fz($f3)
+
+  @media screen and (min-width: $tablet) and (max-width: $laptop)
+    +fz($f4)
+
+  @media screen and (min-width: $laptop)
+    +fz($f5)
+    h1
+      +fz($f12)
+    h2
+      +fz($f11)
+    h3
+      +fz($f10)
+    h4
+      +fz($f9)
+    h5
+      +fz($f8)
+    h6
+      +fz($f7)
+
+.thin
+  font-weight: 300
+.bold
+  font-weight: 500
+
+// FONTS:
+@font-face
+  font-family: 'FontAwesome'
+  // src: url('../fonts/fontawesome-webfont.eot?v=//{$fa-version}')
+  // src: url('../fonts/fontawesome-webfont.eot?//iefix&v=//{$fa-version}') format('embedded-opentype'),
+  //   url('../fonts/fontawesome-webfont.woff?v=//{$fa-version}') format('woff'),
+  //   url('../fonts/fontawesome-webfont.ttf?v=//{$fa-version}') format('truetype'),
+  //   url('../fonts/fontawesome-webfont.svg?v=//{$fa-version}//fontawesomeregular') format('svg')
+  src: url('../fonts/FontAwesome.ttf') format('truetype')
+  // src: url('../fonts/FontAwesome.otf') format('opentype') // used when developing fonts
+  font-weight: normal
+  font-style: normal
+
+.fb
+  display: inline-block
+  font: normal normal normal 14px/1 FontBravo
+  font-size: inherit
+  text-rendering: auto
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+.fb-star:before
+  content: "\22c6"
+
+// VARIABLES:
+// color:
+$off: 0
+$sat: 100%
+// % + %*12
+$lit: 50%
+// 20% + 6%*12
+$o: 1
+
+$grayoff: 0
+$g1: rgb($grayoff + 11 * 23, $grayoff + 11 * 23, $grayoff + 11 * 23)
+$g2: rgb($grayoff + 10 * 23, $grayoff + 10 * 23, $grayoff + 10 * 23)
+$g3: rgb($grayoff + 9 * 23, $grayoff + 9 * 23, $grayoff + 9 * 23)
+$g4: rgb($grayoff + 8 * 23, $grayoff + 8 * 23, $grayoff + 8 * 23)
+$g5: rgb($grayoff + 7 * 23, $grayoff + 7 * 23, $grayoff + 7 * 23)
+$g6: rgb($grayoff + 6 * 23, $grayoff + 6 * 23, $grayoff + 6 * 23)
+$g7: rgb($grayoff + 5 * 23, $grayoff + 5 * 23, $grayoff + 5 * 23)
+$g8: rgb($grayoff + 4 * 23, $grayoff + 4 * 23, $grayoff + 4 * 23)
+$g9: rgb($grayoff + 3 * 23, $grayoff + 3 * 23, $grayoff + 3 * 23)
+$g10: rgb($grayoff + 2 * 23, $grayoff + 2 * 23, $grayoff + 2 * 23)
+$g11: rgb($grayoff + 1 * 23, $grayoff + 1 * 23, $grayoff + 1 * 23)
+$g12: rgb($grayoff + 0 * 23, $grayoff + 1 * 23, $grayoff + 1 * 23)
+
+$bt1: rgba(0, 0, 0, $o1)
+$bt2: rgba(0, 0, 0, $o2)
+$bt3: rgba(0, 0, 0, $o3)
+$bt4: rgba(0, 0, 0, $o4)
+$bt5: rgba(0, 0, 0, $o5)
+$bt6: rgba(0, 0, 0, $o6)
+$bt7: rgba(0, 0, 0, $o7)
+$bt8: rgba(0, 0, 0, $o8)
+$bt9: rgba(0, 0, 0, $o9)
+$bt10: rgba(0, 0, 0, $o10)
+$bt11: rgba(0, 0, 0, $o11)
+$bt12: rgba(0, 0, 0, $o12)
+
+$wt1: rgba(255, 255, 255, $o1)
+$wt2: rgba(255, 255, 255, $o2)
+$wt3: rgba(255, 255, 255, $o3)
+$wt4: rgba(255, 255, 255, $o4)
+$wt5: rgba(255, 255, 255, $o5)
+$wt6: rgba(255, 255, 255, $o6)
+$wt7: rgba(255, 255, 255, $o7)
+$wt8: rgba(255, 255, 255, $o8)
+$wt9: rgba(255, 255, 255, $o9)
+$wt10: rgba(255, 255, 255, $o10)
+$wt11: rgba(255, 255, 255, $o11)
+$wt12: rgba(255, 255, 255, $o12)
+
+
+$red: hsla($off + 0, $sat, $lit, $o)
+$orange: hsla($off + 30, $sat, $lit, $o)
+$yellow: hsla($off + 60, $sat, $lit, $o)
+$lightgreen: hsla($off + 90, $sat, $lit, $o)
+$green: hsla($off + 120, $sat, $lit, $o)
+$greenish: hsla($off + 150, $sat, $lit, $o)
+$navyblue: hsla($off + 180, $sat, $lit, $o)
+$blue: hsla($off + 210, $sat, $lit, $o)
+$darkblue: hsla($off + 240, $sat, $lit, $o)
+$purple: hsla($off + 270, $sat, $lit, $o)
+$pink: hsla($off + 300, $sat, $lit, $o)
+$reddish: hsla($off + 330, $sat, $lit, $o)
+
+// grayscale
+$black: rgba(0, 0, 0, .9)
+$dark: rgba(0, 0, 0, .7)
+$gray: rgba(0, 0, 0, .5)
+$pale: rgba(0, 0, 0, .3)
+$light: rgba(0, 0, 0, .1)
+
+// DISPLAY:
+=bbox
+  box-sizing: border-box
+=cbox
+  box-sizing: content-box
+=o
+  overflow: hidden
+=cleanlist
+  // list-style: none
+  list-style-type: none
+=hide
+  display: none
+=show
+  display: inherit
+=cover
+  visibility: hidden
+  // opacity: 0
+=reveal
+  visibility: visible
+  // opacity: 1
+=blk
+  display: block
+=inl
+  display: inline
+=inb
+  display: inline-block
+=trans($val)
+  opacity: $val
+=transparent
+  +trans(0)
+=fll
+  float: left
+=flr
+  float: right
+=cll
+  clear: left
+=clr
+  clear: right
+=nooutline
+  outline: none
+
+// POSITION:
+=a
+  position: absolute
+=r
+  position: relative
+=f
+  position: fixed
+=tp($tp:0)
+  top: $tp
+=rt($rt:0)
+  right: $rt
+=bt($bt:0)
+  bottom: $bt
+=lt($lt:0)
+  left: $lt
+=tl($tp: 0, $lt:0)
+  top: $tp
+  left: $lt
+=tr($tp: 0, $rt:0)
+  top: $tp
+  right: $rt
+=bl($bt: 0, $lt:0)
+  bottom: $bt
+  left: $lt
+=br($bt: 0, $rt:0)
+  bottom: $bt
+  right: $rt
+=tcenter
+  text-align: center
+=mcenter
+  margin-left: auto
+  margin-right: auto
+=z($v:1000)
+  z-index: $v
+
+// SPACING:
+=m($m:0)
+  margin: $m
+=mgv($m:10px)
+  margin-top: $m
+  margin-bottom: $m
+=mgh($m:auto)
+  margin-left: $m
+  margin-right: $m
+=p($p:0)
+  padding: $p
+=pdv($p:10px)
+  padding-top: $p
+  padding-bottom: $p
+=pdh($p:5px)
+  padding-left: $p
+  padding-right: $p
+=mbp($m:0, $b:none, $p:0)
+  margin: $m
+  border: $b
+  padding: $p
+=mb
+  margin: 0
+  border: none
+=mp
+  margin: 0
+  padding: 0
+=bp
+  border: none
+  padding: 0
+
+// BORDER:
+=bd($v:none)
+  border: $v
+=bdc($c:rgba(0, 0, 0, .3))
+  border: 1px solid $c
+
+=redborder
+  +bdc($red)
+=blackborder
+  +bdc($black)
+=darkborder
+  +bdc($dark)
+=grayborder
+  +bdc($gray)
+=paleborder
+  +bdc($pale)
+=lightborder
+  +bdc($light)
+=whiteborder
+  +bdc(white)
+
+
+=bdr($r)
+  +border-left-radius($r)
+  +border-right-radius($r)
+=bdrl($r)
+  +border-left-radius($r)
+=bdrr($r)
+  +border-right-radius($r)
+=bdrt($r)
+  +border-top-radius($r)
+=bdrb($r)
+  +border-bottom-radius($r)
+=bdr1
+  +bdr(1px)
+=bdr2
+  +bdr(2px)
+=bdr3
+  +bdr(3px)
+=bdr4
+  +bdr(4px)
+=bdr5
+  +bdr(5px)
+=bdr6
+  +bdr(6px)
+=bdr7
+  +bdr(7px)
+=circle
+  +bdr(500px)
+
+=tri-corner-top($s, $c1)
+  border-width: $s
+  border-style: solid
+  border-color: transparent
+  border-top-color: $c1
+=tri-corner-bottom($s, $c1)
+  border-width: $s
+  border-style: solid
+  border-color: transparent
+  border-bottom-color: $c1
+=tri-corner-left($s, $c1)
+  border-width: $s
+  border-style: solid
+  border-color: transparent
+  border-left-color: $c1
+=tri-corner-right($s, $c1)
+  border-width: $s
+  border-style: solid
+  border-color: transparent
+  border-right-color: $c1
+
+=tri-corner-tl($s, $c1)
+  border-top: $s solid $c1
+  border-left: $s solid transparent
+=tri-corner-tr($s, $c1)
+  border-top: $s solid $c1
+  border-right: $s solid transparent
+=tri-corner-bl($s, $c1)
+  border-bottom: $s solid $c1
+  border-left: $s solid transparent
+=tri-corner-br($s, $c1)
+  border-bottom: $s solid $c1
+  border-right: $s solid transparent
+
+
+
+// SIZE:
+=w($w:100%)
+  width: $w
+=h($h:100%)
+  height: $h
+=wh($w:100%, $h:100%)
+  width: $w
+  height: $h
+
+// BACKGROUND:
+=bgc($c)
+  background-color: $c
+=redback
+  +bgc($red)
+=blackback
+  +bgc($black)
+=darkback
+  +bgc($dark)
+=grayback
+  +bgc($gray)
+=paleback
+  +bgc($pale)
+=lightback
+  +bgc($light)
+=whiteback
+  +bgc(white)
+=transback
+  +bgc(transparent)
+
+// gradient:
+=lgrad($grad:(red, blue), $pos:top, $rep:repeat)
+  +background( linear-gradient( $grad ) $pos $rep )
+=rgrad($grad:(red, blue), $pos:top, $rep:repeat)
+  +background( radial-gradient( $grad ) $pos $rep )
+
+=bgimg($img, $pos:0px 0px, $repeat: no-repeat)
+  background-image: url($img)
+  background-position: $pos
+  background-repeat: $repeat
+  // background-origin: border-box // padding-box, content-box, inherit
+  // background-clip: border-box // border-box, padding-box, content-box, inherit
+  // background-size: auto/50%/6px/3em/inherit/cover/contain
+  // background-attachment: scroll/fixed/local/inherit
+  // background-origin: border-box/padding-box/content-box
+=bgpat($img)
+  background-image: url($img)
+  background-origin: border-box // padding-box, content-box, inherit
+  background-clip: border-box // border-box, padding-box, content-box, inherit
+  background-position: top left // center
+  background-repeat: repeat repeat
+  background-size: 100%
+  // background-size: auto/50%/6px/3em/inherit/cover/contain
+  // background-attachment: scroll/fixed/local/inherit
+=bgimgsetting($repeat:repeat)
+  // background-image: url($img)
+  background-origin: border-box // padding-box, content-box, inherit
+  background-clip: border-box // border-box, padding-box, content-box, inherit
+  background-position: top left // center
+  background-repeat: $repeat
+  // background-size: auto/50%/6px/3em/inherit/cover/contain
+  // background-attachment: scroll/fixed/local/inherit
+=backgroundimg($v)
+  background: $v
+  background-origin: border-box // padding-box, content-box, inherit
+  background-clip: border-box // border-box, padding-box, content-box, inherit
+  // background-size: auto/50%/6px/3em/inherit/cover/contain
+  // background-attachment: scroll/fixed/local/inherit
+
+
+// TEXT/FONT:
+=c($c:rgba(0, 0, 0, .3))
+  color: $c
+
+=font($fz:1em, $lh:1em)
+  font-size: $fz
+  line-height: $lh
+
+=fa($code:"\f013")
+  font: normal normal normal 14px/1 FontAwesome
+  text-rendering: auto
+  -webkit-font-smoothing: antialiased
+  content: $code
+
+// SHADOW:
+=bs($set:0 0 3px $bt11)
+  box-shadow: $set
+=bsring($dep:1px)
+  +bs(0 0 $dep $bt11)
+=bs1
+  +bsring(1px)
+=bs2
+  +bsring(2px)
+=bs3
+  +bsring(3px)
+=bs4
+  +bsring(4px)
+=bs5
+  +bsring(5px)
+=bs6
+  +bsring(6px)
+=bs7
+  +bsring(7px)
+=ts($set)
+  text-shadow: $set
+
+
+// ANIMATION:
+
+
+// TRANSFORM:
+=pr($per:500px)
+  +perspective($per)
+=pro($x:50%, $y:50%)
+  +perspective-origin($x $y)
+=per($per:500px, $x:50%, $y:50%)
+  +perspective($per)
+  +perspective-origin($x $y)
+
+=trcontext($per:500px, $orig: 50% 50%)
+  +perspective($per)
+  +perspective-origin( $orig )
+  +transform-style(preserve-3d)
+
+=trf($context, $transform)
+  +tro( $context )
+  +transform( $transform )
+
+=rtx( $r:45deg )
+  +tro(top center)
+  +transform( rotateX($r) )
+=rty( $r:45deg )
+  +tro(left center)
+  +transform( rotateY($r) )
+
+=tro($val:center)
+  transform-origin: $val
+
+=rt($val:90deg)
+  transform: rotate($val)
+=sc($val)
+  transform: scale($val)
+=scx($val)
+  transform: scaleX($val)
+=scy($val)
+  transform: scaleY($val)
+=sk($val)
+  transform: skew($val)
+=skx($val)
+  transform: skewX($val)
+=sky($val)
+  transform: skewY($val)
+=mv($val)
+  transform: translate($val)
+=mvx($val)
+  transform: translateX($val)
+=mvy($val)
+  transform: translateY($val)
+
+
+// COMBINATION:
+=atl
+  +a
+  +tl
+=rtl
+  +r
+  +tl
+=ftl
+  +f
+  +tl
+=ambp
+  +a
+  +mbp
+=rmbp
+  +r
+  +mbp
+=fmbp
+  +f
+  +mbp
+=ambpwh
+  +a
+  +mbp
+  +wh
+=rmbpwh
+  +r
+  +mbp
+  +wh
+=fmbpwh
+  +f
+  +mbp
+  +wh
+=atlw
+  +a
+  +tl
+  +wh(100%, auto)
+=rtlw
+  +r
+  +tl
+  +wh(100%, auto)
+=ftlw
+  +f
+  +tl
+  +wh(100%, auto)
+=atlmbp
+  +a
+  +tl
+  +mbp
+=rtlmbp
+  +r
+  +tl
+  +mbp
+=ftlmbp
+  +f
+  +tl
+  +mbp
+=atlmbpw
+  +a
+  +tl
+  +mbp
+  +wh(100%, auto)
+=rtlmbpw
+  +r
+  +tl
+  +mbp
+  +wh(100%, auto)
+=ftlmbpw
+  +f
+  +tl
+  +mbp
+  +wh(100%, auto)
+=atlmbpwh
+  +a
+  +tl
+  +mbp
+  +wh
+=rtlmbpwh
+  +r
+  +tl
+  +mbp
+  +wh
+=ftlmbpwh
+  +f
+  +tl
+  +mbp
+  +wh
+
+=atrmbp
+  +a
+  +tr
+  +mbp
+=rtrmbp
+  +r
+  +tr
+  +mbp
+=ftrmbp
+  +f
+  +tr
+  +mbp
+
+// MISCS:
+=wrapper
+  // +r
+  +tl
+  +wh
+  +mbp
+  +transback
+
+=mask
+  +a
+  +tl
+  +mbp
+  +wh
+
+=inner
+  +a
+  +tl
+  +m
+  +wh
+
+
+
+
+// CSS
+// a absolute all alpha and animation animation-duration animation-iteration-count animation-name animation-timing-function attr auto avoid background background-clip background-color background-image background-position background-repeat background-size baseline black block bold border border-box border-collapse border-color border-radius border-spacing border-style border-top both bottom box-shadow box-sizing break-all break-word capitalize center circle clear clip collapse color content content-box cursor dashed data default device-height device-width disc display dotted ease ease-in-out ease-out ellipsis em false filter fixed float font font-family font-size font-style font-weight height help hidden href image img important infinite inherit inline inline-block inset italic justify left letter-spacing line-height linear linear-gradient list-style list-style-position list-style-type margin matrix max-height middle min-height min-width monospace no-repeat none normal not-allowed nowrap only opacity optimizelegibility orphans outline outline-offset outside overflow overflow-y padding padding-box padding-left page-break-after page-break-inside perspective pointer position pre pre-wrap progress-bar-stripes rect relative repeat-x repeat-y rgba right rotate rotateX rotateY rotateZ sans-serif scale scaleX scaleY scaleZ screen scroll separate skewX skewY solid square static table table-cell table-header-group table-row table-row-group text-align text-decoration text-indent text-overflow text-rendering text-shadow text-transform thin title to top transform transform-origin transform-style transition translate translateX translateY translateZ transparent underline uppercase url vertical-align visibility visible white whitesmoke widows width word-break z-index zoom
+
+// SASS/SCSS
+// rgb rgba hsl hsla red green blue hue saturation lightness alpha grayscale invert complement mix adjust-hue saturate desaturate lighten darken opacify transparentize adjust-color scale-color change-color ie-hex-str unquote quote str-length str-insert str-index str-slice to-upper-case to-lower-case round ceil floor abs min max random percentage length nth join append zip index list-separator map-get map-merge map-remove map-keys map-values map-has-key keywords selector-nest selector-append selector-extend selector-replace selector-unify is-superselector simple-selectors selector-parse feature-exists variable-exists global-variable-exists function-exists mixin-exists inspect type-of unit unitless comparable call if unique-id

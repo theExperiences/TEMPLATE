@@ -1,0 +1,213 @@
+//- TEST:
+
+
+
+//- BLIP:
+
+
+//- data-ng-repeat='e in list'> {{ e }}
+//- .container
+//-   .row
+//-     .col-xs-12.col-md-6.col-lg-3
+//-       .card-holder
+//-         .example-card.hcard.bdc-g2
+//-           .head
+//-             .upper
+//-             .middle
+//-               h1 TITLE
+//-             .lower
+//-           .body
+//-             .upper
+//-             .middle
+//-               |  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias veniam sunt error suscipit repellat eum eos mollitia fuga dolore doloribus illum, hic eius molestias, blanditiis facere vero ut. Suscipit, quae.
+//-             .lower
+//-           .foot
+//-             .upper
+//-             .middle
+//-               | theExperiences
+//-               hr
+//-               | theExperiences Media Co., Ltd.
+//-               hr
+//-               | theexperiences@gmail.com
+//-             .lower
+//-           //- .middle-circle.bgc-bt11
+//-           //-   span.fa.fa-gears.fa-2x.fa-spin.whitetext
+//-           //- .card-handle.bgc-wt11
+//-           //-   i.fa.fa-plus.redtext.textflow1
+//-         .card-back.cbc-bt9
+//-           h4 TITLE
+//-           | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consectetur saepe harum veniam, error eum in, provident totam rerum architecto repudiandae voluptatum deleniti? Obcaecati impedit labore ducimus, nisi beatae perferendis.
+
+//-         //- .ripple
+//-       //- .colorpallete
+//-         //- .wrapper
+//-         //-   .cube
+
+
+//- SINGLE PAGE:
+//-   .row
+//-     section#part1.layer1
+//-   .row
+//-     section#part2.layer2
+//-   .row
+//-     section#part3.layer1
+//-   .row
+//-     section#part4.layer2
+//-   .row
+//-     section#part5.layer1
+//-   .row
+//-     section#part6.layer2
+//-   .row
+//-     section#part7.layer1
+
+//-   nav#atk-vNav
+
+
+//- .row
+//- .container
+//-   nav#atk-top-menu.navbar.navbar-default(role='navigation')
+//-     .container-fluid
+//-       #atk-tm-header.navbar-header
+//-         a#atk-tm-logo.navbar-brand(href='#')
+//-           img(src='../img/LARGE_01.jpg' alt='BRAND NAME')
+//-         a#atk-tm-togglebutton.navbar-toggle.collapsed(type='button' data-toggle='collapse' data-target='#atk-navbar-content')
+//-           span#atk-tm-toggletext.sr-only TOGGLE NAVIGATION
+//-           span#atk-tm-toggleicon.fa.fa-chevron-down
+//-       #atk-tm-content.collapse.navbar-collapse
+//-         ul.nav.navbar-nav.atk-tm-nav
+//-           //- li.atk-tm-link
+//-           li.atk-tm-dropdown
+//-             a.atk-tm-dropdown-link(data-toggle='dropdown')
+//-               | ONE
+//-           li.atk-tm-dropdown
+//-             a.atk-tm-dropdown-link(data-toggle='dropdown')
+//-               | TWO
+//-             ul.dropdown-menu.atk-tm-dropdown-menu.show(role='menu')
+//-               li.dropdown-header
+//-                 | HEADER
+//-               li
+//-                 a(href='#') Another action
+//-               li.divider
+//-               li.disabled
+//-                 a(href='#') Separated link
+//-       #atk-tm-mega-content
+//-         .row.atk-tm-mega-panel
+//-           .col-xs-1.col-md-2.col-lg-2.atk-tm-mega-col
+//-             ul.atk-tm-mega-incol-menu
+//-               li.atk-tm-mega-incol-menu-header ONE
+//-               li.atk-tm-mega-incol-menu-item
+//-                 a SOMETHING
+//-               li.atk-tm-mega-incol-menu-divider
+//-               li.atk-tm-mega-incol-menu-disabled
+//-                 a THREE
+//-           .col-xs-1.col-md-2.col-lg-2.atk-tm-mega-col
+//-             ul.atk-tm-mega-incol-menu
+//-               li.atk-tm-mega-incol-menu-header ONE
+//-               li
+//-                 a SOMETHING
+//-               li.atk-tm-mega-incol-menu-divider
+//-               li.atk-tm-mega-incol-menu-disabled
+//-                 a THREE
+//-           .col-xs-1.col-md-2.col-lg-2.atk-tm-mega-col
+//-             ul.atk-tm-mega-incol-menu
+//-               li.atk-tm-mega-incol-menu-header ONE
+//-               li
+//-                 a SOMETHING
+//-               li.atk-tm-mega-incol-menu-divider
+//-               li.atk-tm-mega-incol-menu-disabled
+//-                 a THREE
+//-           .col-xs-1.col-md-2.col-lg-2.atk-tm-mega-col
+//-             ul.atk-tm-mega-incol-menu
+//-               li.atk-tm-mega-incol-menu-header ONE
+//-               li
+//-                 a SOMETHING
+//-               li.atk-tm-mega-incol-menu-divider
+//-               li.atk-tm-mega-incol-menu-disabled
+//-                 a THREE
+//-           .col-xs-1.col-md-2.col-lg-2.atk-tm-mega-col
+//-             ul.atk-tm-mega-incol-menu
+//-               li.atk-tm-mega-incol-menu-header ONE
+//-               li
+//-                 a SOMETHING
+//-               li.atk-tm-mega-incol-menu-divider
+//-               li.atk-tm-mega-incol-menu-disabled
+//-                 a THREE
+//-           .col-xs-1.col-md-2.col-lg-2.atk-tm-mega-col
+//-             ul.atk-tm-mega-incol-menu
+//-               li.atk-tm-mega-incol-menu-header ONE
+//-               li
+//-                 a SOMETHING
+//-               li.atk-tm-mega-incol-menu-divider
+//-               li.atk-tm-mega-incol-menu-disabled
+//-                 a THREE
+
+
+
+
+//----------------- ATK SLIDER -----------------//
+//- .container
+//-   .row
+//-     .col-xs-12
+//-       //- .atk-slider.full-screen.auto-play
+//-       //- .atk-slider.full-screen
+//-       .atk-slider
+//-         .atk-slide.atk-anibox.active
+//-           img(src='../img/LARGE_08.jpg')
+//-           h2 ONE
+//-         .atk-slide.atk-anibox
+//-           img(src='../img/LARGE_07.jpg')
+//-           h2 TWO
+//-         .atk-slide.atk-anibox
+//-           img(src='../img/LARGE_02.jpg')
+//-           h2 THREE
+//-         #atk-slider-backward
+//-           i.fa.fa-chevron-left.fa-2x
+//-         #atk-slider-forward
+//-           i.fa.fa-chevron-right.fa-2x
+//-         ul#atk-navdot-bar
+//-           li.atk-navdot
+//-             i.fa.fa-circle
+//-         ul#atk-navtab-bar
+//-           li.atk-navtab
+//-         //- .atk-slider-spinloader
+//-         //-   .atk-slider-spincounter
+//-         //- .atk-slider-bottomloader
+//-           //- .atk-slider-bottomcounter
+//-         //- .atk-slider-toploader
+//-           //- .atk-slider-topcounter
+//-         //- .atk-slider-coverloader
+//-         //-   .atk-slider-covercounter
+
+
+//-       #atk-slider-box
+//-         .atk-animatrix-box.active(data-atk-animatrix-box-options='src: ../img/animatrix_01.jpg; wseg: 10; hseg: 5')
+//-         .atk-animatrix-box(data-atk-animatrix-box-options='src: ../img/animatrix_03.jpg; wseg: 10; hseg: 5')
+//-         .atk-animatrix-box(data-atk-animatrix-box-options='src: ../img/animatrix_08.jpg; wseg: 10; hseg: 5')
+
+
+//------------------ ATK FONT PICKER -----------------//
+//-       table.table.table-bordered
+//-       #atk-font-picker
+//-         #atk-font-picker-back.active
+//-           i.fa.fa-angle-right
+//-         #atk-font-picker-fore
+//-           i.fa.fa-angle-left
+//-         #atk-font-picker-pagenum
+//-           | 1 / 500
+//-         table
+//-           tbody
+//-             tr
+//-               td A
+//-               td A
+//-               td A
+//-             tr
+//-               td A
+//-               td A
+//-               td A
+//-             tr
+//-               td A
+//-               td A
+//-               td A
+
+//-       #atk-display-panel
+//-         #black-dot
